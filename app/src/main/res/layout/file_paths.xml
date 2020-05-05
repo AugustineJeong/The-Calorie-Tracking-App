@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--CITATION: edited from code on Android Developers Documentation
-https://developer.android.com/training/camera/photobasics#java-->
-<paths xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <!-- Offer access to files under Context.getCacheDir() -->
-    <external-files-path android:name="my_images" android:path="Android/data/com.example.the_calories_tracking_app/files/Pictures" />
-</paths>
