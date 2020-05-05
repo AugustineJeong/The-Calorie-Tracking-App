@@ -1,4 +1,4 @@
-# the calories tracking app
+# the calories tracking app.
 
 ## Instructions
 TBA. Development in progress.
@@ -8,7 +8,7 @@ TBA. Development in progress.
 
 ## Screenshots 
 <div>
-<img src="https://user-images.githubusercontent.com/14143525/80912904-2bec3d00-8cf5-11ea-91b9-f1032c236b52.png" width="250">
+<img src="https://user-images.githubusercontent.com/14143525/81024747-41fb1a00-8e29-11ea-9d09-0ac847b0dbbc.png" width="250">
   
 ## Author
 **Augustine Jeong**
