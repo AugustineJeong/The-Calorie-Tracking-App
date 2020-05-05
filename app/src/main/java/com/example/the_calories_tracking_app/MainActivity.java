@@ -25,13 +25,10 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageView imageView = null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        imageView = findViewById(R.id.imageView3);
 
     }
 
@@ -50,16 +47,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent imageScreen = new Intent(this, ProgramActivity.class);
                 Bitmap bitmap = (Bitmap) data.getExtras().get("data");
                 imageScreen.putExtra("image", bitmap);
-                if (imageView != null) {
-                    imageView.setImageBitmap(bitmap);
-
-                }
                 startActivity(imageScreen);
             }
         }
     }
 }
-
 
 
 // https://developer.android.com/training/camera/photobasics#java
