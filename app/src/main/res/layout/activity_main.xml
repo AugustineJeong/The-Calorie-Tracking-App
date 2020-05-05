@@ -29,6 +29,7 @@
         android:layout_height="46dp"
         android:background="@drawable/rounded_button_background"
         android:fontFamily="casual"
+        android:onClick="dispatchTakePictureIntent"
         android:text="Scan Image"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
