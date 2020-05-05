@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--CITATION: Copied from Google's Android Developers Documentation,-->
+<!--https://developer.android.com/training/camera/photobasics#java-->
+
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-files-path name="my_images" path="." />
+</paths>
