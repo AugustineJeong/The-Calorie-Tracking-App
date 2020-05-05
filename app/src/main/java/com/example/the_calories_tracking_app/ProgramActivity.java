@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.media.Image;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -17,7 +20,14 @@ import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.document.FirebaseVisionDocumentTextRecognizer;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
+import com.google.firebase.ml.vision.text.RecognizedLanguage;
 
+import org.w3c.dom.Text;
+
+import java.util.List;
+
+// CITATION: Parts of code copied and edited from
+// Google's Firebase documentation https://firebase.google.com/docs/ml-kit/android/recognize-text#java_103
 public class ProgramActivity extends AppCompatActivity {
 
     @Override
@@ -33,23 +43,24 @@ public class ProgramActivity extends AppCompatActivity {
 
         FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
 
-        FirebaseVisionTextRecognizer textRecognizer = FirebaseVision.getInstance().getCloudTextRecognizer();
-
-        Task<FirebaseVisionText> result = processImage(textRecognizer, image);
-    }
-
-    private Task<FirebaseVisionText> processImage(FirebaseVisionTextRecognizer textRecognizer, FirebaseVisionImage image) {
-        Task<FirebaseVisionText> result = textRecognizer.processImage(image).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                backToMain();
-            }
-        });
-        return result;
-    }
-
-    private void backToMain() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        FirebaseVisionTextRecognizer recognizer = FirebaseVision.getInstance()
+                .getOnDeviceTextRecognizer();
+        recognizer.processImage(image)
+                .addOnSuccessListener(
+                        new OnSuccessListener<FirebaseVisionText>() {
+                            @Override
+                            public void onSuccess(FirebaseVisionText texts) {
+                                TextView resultTextView = findViewById(R.id.textView3);
+                                resultTextView.setText(texts.getText());
+                            }
+                        })
+                .addOnFailureListener(
+                        new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // Task failed with an exception
+                                e.printStackTrace();
+                            }
+                        });
     }
 }
