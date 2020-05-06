@@ -189,13 +189,13 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="149dp"
-        android:layout_height="46dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:background="@drawable/circle_button"
         android:fontFamily="casual"
         android:text="Record Data"
         android:textColor="#FFFFFF"
-        android:textSize="17dp"
+        android:textSize="17.5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

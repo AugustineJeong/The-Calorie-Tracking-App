@@ -69,7 +69,6 @@ public class ProgramActivity extends AppCompatActivity {
                                 public void onSuccess(FirebaseVisionText texts) {
                                     TextView resultTextView = findViewById(R.id.calories);
                                     recognizedText = texts.getText();
-                                    resultTextView.setText(recognizedText);
                                 }
                             })
                     .addOnFailureListener(
