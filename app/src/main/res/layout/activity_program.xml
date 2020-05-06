@@ -7,7 +7,7 @@
     tools:context=".ProgramActivity">
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/sugarText"
         android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/proteinText"
         android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/cholesterolText"
         android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/sodiumText"
         android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
@@ -55,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/carbohydrateText"
         android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
@@ -67,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/caloriesText"
         android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
@@ -128,7 +128,7 @@
 
     <TextView
         android:id="@+id/carbohydrate"
-        android:layout_width="150dp"
+        android:layout_width="170dp"
         android:layout_height="37dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
@@ -176,7 +176,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Title" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/fatText"
         android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
@@ -186,4 +186,19 @@
         android:text="unrecognized"
         app:layout_constraintBaseline_toBaselineOf="@+id/fat"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="149dp"
+        android:layout_height="46dp"
+        android:background="@drawable/circle_button"
+        android:fontFamily="casual"
+        android:text="Record Data"
+        android:textColor="#FFFFFF"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sugar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
