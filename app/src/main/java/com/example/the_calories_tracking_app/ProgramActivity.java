@@ -7,42 +7,28 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.media.Image;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
-import com.google.firebase.ml.vision.document.FirebaseVisionDocumentTextRecognizer;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
-import com.google.firebase.ml.vision.text.RecognizedLanguage;
-
-import org.w3c.dom.Text;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.List;
 
 // CITATION: Parts of code copied and edited from
 // Google's Firebase documentation https://firebase.google.com/docs/ml-kit/android/recognize-text#java_103
 public class ProgramActivity extends AppCompatActivity {
 
-    private Uri uri;
+    private String recognizedText;
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent intent){
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
-        this.uri = intent.getData();
     }
 
     @Override
@@ -81,8 +67,9 @@ public class ProgramActivity extends AppCompatActivity {
                             new OnSuccessListener<FirebaseVisionText>() {
                                 @Override
                                 public void onSuccess(FirebaseVisionText texts) {
-                                    TextView resultTextView = findViewById(R.id.textView3);
-                                    resultTextView.setText(texts.getText());
+                                    TextView resultTextView = findViewById(R.id.calories);
+                                    recognizedText = texts.getText();
+                                    resultTextView.setText(recognizedText);
                                 }
                             })
                     .addOnFailureListener(
@@ -96,8 +83,7 @@ public class ProgramActivity extends AppCompatActivity {
         }
     }
 
-    private Bitmap rotateBitmap(Bitmap source, float angle)
-    {
+    private Bitmap rotateBitmap(Bitmap source, float angle) {
         Matrix matrix = new Matrix();
         matrix.postRotate(angle);
         return Bitmap.createBitmap(source, 0, 0, source.getWidth(),

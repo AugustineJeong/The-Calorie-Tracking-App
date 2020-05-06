@@ -6,27 +6,100 @@
     android:layout_height="match_parent"
     tools:context=".ProgramActivity">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="222dp"
-        android:layout_height="283dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+    <TextView
+        android:id="@+id/sugar"
+        android:layout_width="122dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="casual"
+        android:text="Sugar"
+        android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.122"
-        tools:srcCompat="@tools:sample/avatars[12]" />
+        app:layout_constraintTop_toBottomOf="@+id/sodium" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="262dp"
-        android:layout_height="239dp"
-        android:layout_marginTop="64dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        android:id="@+id/sodium"
+        android:layout_width="122dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="casual"
+        android:text="Sodium"
+        android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/cholesterol" />
+
+    <TextView
+        android:id="@+id/cholesterol"
+        android:layout_width="140dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="casual"
+        android:text="Cholesterol"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/protein" />
+
+    <TextView
+        android:id="@+id/protein"
+        android:layout_width="122dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="casual"
+        android:text="Protein"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carbohydrate" />
+
+    <TextView
+        android:id="@+id/carbohydrate"
+        android:layout_width="150dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="casual"
+        android:text="Carbohydrate"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fat" />
+
+    <TextView
+        android:id="@+id/fat"
+        android:layout_width="122dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="casual"
+        android:text="Fat"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calories" />
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="207dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="casual"
+        android:text="Nutrition Facts"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/calories"
+        android:layout_width="122dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="casual"
+        android:text="Calories"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title" />
 </androidx.constraintlayout.widget.ConstraintLayout>
