@@ -17,12 +17,15 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-// CITATION: createImageFile() and takePhotoIntent() copied from
+// CITATION: createImageFile() and takePhotoIntent() edited from sample code provided in
 // Google's Android Developers Documentation,
 // https://developer.android.com/training/camera/photobasics#java
 
 
 public class MainActivity extends AppCompatActivity {
+
+    String currentPhotoPath;
+    static final int REQUEST_TAKE_PHOTO = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,42 +34,28 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    String currentPhotoPath;
-
     private File createImageFile() throws IOException {
-        // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + timeStamp + "_";
+        String imageFileName = "JPEG_00000000_000000_";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        File image = File.createTempFile(
-                imageFileName,  /* prefix */
-                ".jpg",         /* suffix */
-                storageDir      /* directory */
-        );
+        File image = File.createTempFile(imageFileName, ".jpeg", storageDir);
 
-        // Save a file: path for use with ACTION_VIEW intents
         currentPhotoPath = image.getAbsolutePath();
         return image;
     }
 
-    static final int REQUEST_TAKE_PHOTO = 1;
-
     public void takePhotoIntent(View view) {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // Ensure that there's a camera activity to handle the intent
+
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            // Create the File where the photo should go
             File photoFile = null;
             try {
                 photoFile = createImageFile();
-            } catch (IOException ex) {
-                // Error occurred while creating the File
+            } catch (IOException e) {
             }
-            // Continue only if the File was successfully created
+
             if (photoFile != null) {
                 Uri photoURI = FileProvider.getUriForFile(this,
-                        "com.AugustineLabs.calories.fileprovider",
-                        photoFile);
+                        "com.AugustineLabs.calories.fileprovider", photoFile);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
             }
@@ -74,34 +63,4 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-
-// https://developer.android.com/training/camera/photobasics#java
-
-//    private String photoSaveLocation;
-
-//    private File saveImageFile() throws IOException {
-//        String name = "JPG_scan_image";
-//        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-//        File imageSaveFile = File.createTempFile(name, ".jpg", storageDir);
-//        photoSaveLocation = imageSaveFile.getAbsolutePath();
-//        return imageSaveFile;
-//    }
-//
-//    public void takePhotoIntent(View view) {
-//        Intent takePhotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//        if (takePhotoIntent.resolveActivity(getPackageManager()) != null) {
-//            File photoFile = null;
-//            try {
-//                photoFile = saveImageFile();
-//            } catch (IOException e) {
-//                System.out.println("error creating file!");
-//            }
-//            if (photoFile != null) {
-//                Uri photoURI = FileProvider.getUriForFile(this,
-//                        "com.example.android.fileprovider", photoFile);
-//                takePhotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-//                startActivityForResult(takePhotoIntent, 1);
-//            }
-//        }
-//    }
 
