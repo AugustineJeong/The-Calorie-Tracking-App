@@ -56,8 +56,8 @@ public class ProgramActivity extends AppCompatActivity {
             System.out.println("Firebase image fail");
         }
 
-        ImageView imageView = findViewById(R.id.imageView3);
-        imageView.setImageBitmap(bitmap);
+//        ImageView imageView = findViewById(R.id.imageView3);
+//        imageView.setImageBitmap(bitmap);
 
         if (image != null) {
             FirebaseVisionTextRecognizer recognizer = FirebaseVision.getInstance()
