@@ -61,6 +61,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Intent imageScreen = new Intent(this, ProgramActivity.class);
+        imageScreen.putExtra("imagePath", currentPhotoPath);
+        startActivity(imageScreen);
+    }
 }
 
 

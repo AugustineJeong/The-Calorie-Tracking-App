@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +28,8 @@ import com.google.firebase.ml.vision.text.RecognizedLanguage;
 
 import org.w3c.dom.Text;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -32,27 +37,38 @@ import java.util.List;
 // Google's Firebase documentation https://firebase.google.com/docs/ml-kit/android/recognize-text#java_103
 public class ProgramActivity extends AppCompatActivity {
 
+    private Uri uri;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent){
+        super.onActivityResult(requestCode, resultCode, intent);
+        this.uri = intent.getData();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_program);
 
-        Bundle bundle = getIntent().getExtras();
-//        Bitmap bitmap = (Bitmap) bundle.get("image");
+        String path = getIntent().getStringExtra("imagePath");
 
-        Uri uri = (Uri) bundle.get("imageUri");
+        Bitmap bitmap = null;
+        try {
+            bitmap = rotateBitmap(BitmapFactory.decodeFile(path), 90);
+        } catch (Exception e) {
+            System.out.println("no file found");
+        }
+
         FirebaseVisionImage image = null;
         try {
-            image = FirebaseVisionImage.fromFilePath(this, uri);
-        } catch (IOException e) {
+            image = FirebaseVisionImage.fromBitmap(bitmap);
+        } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("Firebase image fail");
         }
 
         ImageView imageView = findViewById(R.id.imageView3);
-//        imageView.setImageBitmap(bitmap);
-
-//        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(bitmap);
-
+        imageView.setImageBitmap(bitmap);
 
         if (image != null) {
             FirebaseVisionTextRecognizer recognizer = FirebaseVision.getInstance()
@@ -75,5 +91,13 @@ public class ProgramActivity extends AppCompatActivity {
                                 }
                             });
         }
+    }
+
+    private Bitmap rotateBitmap(Bitmap source, float angle)
+    {
+        Matrix matrix = new Matrix();
+        matrix.postRotate(angle);
+        return Bitmap.createBitmap(source, 0, 0, source.getWidth(),
+                source.getHeight(), matrix, true);
     }
 }
