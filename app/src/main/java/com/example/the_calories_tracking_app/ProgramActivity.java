@@ -59,6 +59,9 @@ public class ProgramActivity extends AppCompatActivity {
             System.out.println("no file found");
         }
 
+        File file = new File(path, "tempFile.jpeg");
+        file.delete();
+
         FirebaseVisionImage image = null;
         try {
             image = FirebaseVisionImage.fromBitmap(bitmap);
