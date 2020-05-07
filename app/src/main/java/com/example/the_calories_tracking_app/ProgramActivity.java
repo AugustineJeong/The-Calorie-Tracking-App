@@ -45,6 +45,7 @@ public class ProgramActivity extends AppCompatActivity {
     private boolean sodiumIndexUpdated = false;
     private boolean sugarIndexUpdated = false;
 
+    private TextView loadingStatus;
     private EditText caloriesValue;
     private EditText fatValue;
     private EditText carbohydrateValue;
@@ -63,6 +64,7 @@ public class ProgramActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_program);
 
+        loadingStatus = findViewById(R.id.loadingStatus);
         caloriesValue = findViewById(R.id.caloriesText);
         fatValue = findViewById(R.id.fatText);
         carbohydrateValue = findViewById(R.id.carbohydrateText);
@@ -163,7 +165,7 @@ public class ProgramActivity extends AppCompatActivity {
                     sodiumIndexUpdated = true;
                 }
             }
-            if (recognizedTextSubstring.contains("sucres") || bruteForceCheckKeyWord("sugar")) {
+            if (recognizedTextSubstring.contains("sucres") || bruteForceCheckKeyWord("sugars")) {
                 if (!sugarIndexUpdated) {
                     sugarIndex = i - 1;
                     sugarIndexUpdated = true;
@@ -178,6 +180,9 @@ public class ProgramActivity extends AppCompatActivity {
         updateSugarValue();
         updateSodiumValue();
         updateCholesterolValue();
+
+        String loadedData = "LOADED DATA";
+        loadingStatus.setText(loadedData);
     }
 
     private void updateCaloriesValue() {

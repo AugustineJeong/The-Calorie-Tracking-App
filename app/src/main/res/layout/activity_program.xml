@@ -13,7 +13,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:fontFamily="casual"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="unrecognized"
         app:layout_constraintBaseline_toBaselineOf="@+id/sugar"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -25,7 +25,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:fontFamily="casual"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="unrecognized"
         app:layout_constraintBaseline_toBaselineOf="@+id/protein"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -37,7 +37,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:fontFamily="casual"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="unrecognized"
         app:layout_constraintBaseline_toBaselineOf="@+id/cholesterol"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -49,7 +49,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:fontFamily="casual"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="unrecognized"
         app:layout_constraintBaseline_toBaselineOf="@+id/sodium"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -61,7 +61,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:fontFamily="casual"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="unrecognized"
         app:layout_constraintBaseline_toBaselineOf="@+id/carbohydrate"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -73,7 +73,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:fontFamily="casual"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="unrecognized"
         app:layout_constraintBaseline_toBaselineOf="@+id/calories"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -182,7 +182,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:fontFamily="casual"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="unrecognized"
         app:layout_constraintBaseline_toBaselineOf="@+id/fat"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -200,5 +200,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sugar" />
+
+    <TextView
+        android:id="@+id/loadingStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="casual"
+        android:text="LOADING DATA"
+        android:textColor="#4CAF50"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
