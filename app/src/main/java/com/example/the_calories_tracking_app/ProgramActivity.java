@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +26,29 @@ import java.io.File;
 public class ProgramActivity extends AppCompatActivity {
 
     private String recognizedText;
+    private int caloriesIndex;
+    private int fatIndex;
+    private int carbohydrateIndex;
+    private int proteinIndex;
+    private int cholesterolIndex;
+    private int sodiumIndex;
+    private int sugarIndex;
+
+    private TextView calories;
+    private TextView fat;
+    private TextView carbohydrate;
+    private TextView protein;
+    private TextView cholesterol;
+    private TextView sodium;
+    private TextView sugar;
+
+    private EditText caloriesValue;
+    private EditText fatValue;
+    private EditText carbohydrateValue;
+    private EditText proteinValue;
+    private EditText cholesterolValue;
+    private EditText sodiumValue;
+    private EditText sugarValue;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -35,6 +59,22 @@ public class ProgramActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_program);
+
+        calories = findViewById(R.id.calories);
+        fat = findViewById(R.id.fat);
+        carbohydrate = findViewById(R.id.carbohydrate);
+        protein = findViewById(R.id.protein);
+        cholesterol = findViewById(R.id.cholesterol);
+        sodium = findViewById(R.id.sodium);
+        sugar = findViewById(R.id.sugar);
+
+        caloriesValue = findViewById(R.id.caloriesText);
+        fatValue = findViewById(R.id.fatText);
+        carbohydrateValue = findViewById(R.id.carbohydrateText);
+        proteinValue = findViewById(R.id.proteinText);
+        cholesterolValue = findViewById(R.id.cholesterolText);
+        sodiumValue = findViewById(R.id.sodiumText);
+        sugarValue = findViewById(R.id.sugarText);
 
         String path = getIntent().getStringExtra("imagePath");
 
@@ -55,9 +95,6 @@ public class ProgramActivity extends AppCompatActivity {
             e.printStackTrace();
             System.out.println("Firebase image fail");
         }
-
-//        ImageView imageView = findViewById(R.id.imageView3);
-//        imageView.setImageBitmap(bitmap);
 
         if (image != null) {
             FirebaseVisionTextRecognizer recognizer = FirebaseVision.getInstance()
@@ -80,6 +117,8 @@ public class ProgramActivity extends AppCompatActivity {
                                 }
                             });
         }
+
+        updateTable();
     }
 
     private Bitmap rotateBitmap(Bitmap source, float angle) {
@@ -87,5 +126,35 @@ public class ProgramActivity extends AppCompatActivity {
         matrix.postRotate(angle);
         return Bitmap.createBitmap(source, 0, 0, source.getWidth(),
                 source.getHeight(), matrix, true);
+    }
+
+    private void updateTable() {
+        recognizedText.toLowerCase();
+        int length = recognizedText.length();
+        String substring;
+        for (int i = 1; i < length; i++) {
+            substring = recognizedText.substring(0, i);
+            if (substring.contains("calories")) {
+                caloriesIndex = i;
+            }
+            if (substring.contains("fat")) {
+                fatIndex = i;
+            }
+            if (substring.contains("carbohydrate")) {
+                carbohydrateIndex = i;
+            }
+            if (substring.contains("protein")) {
+                proteinIndex = i;
+            }
+            if (substring.contains("cholesterol")) {
+                cholesterolIndex = i;
+            }
+            if (substring.contains("sodium")) {
+                sodiumIndex = i;
+            }
+            if (substring.contains("sugar")) {
+                sugarIndex = i;
+            }
+        }
     }
 }
