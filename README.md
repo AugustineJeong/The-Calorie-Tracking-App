@@ -5,7 +5,7 @@ https://youtu.be/EzsfUTFQwsE
 
 ## Screenshots 
 <div>
-<img src="https://user-images.githubusercontent.com/14143525/81293951-0166f080-9023-11ea-828c-8df18486c78f.png" width="250">
+<img src="https://user-images.githubusercontent.com/14143525/81294373-a7b2f600-9023-11ea-8aac-3fd8dfcf860d.png" width="250">
   
 <div>
 <img src="https://user-images.githubusercontent.com/14143525/81294088-32472580-9023-11ea-9b82-bb126738404b.png" width="220">
