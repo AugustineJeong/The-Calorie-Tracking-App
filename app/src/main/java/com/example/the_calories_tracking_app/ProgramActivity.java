@@ -26,13 +26,23 @@ import java.io.File;
 public class ProgramActivity extends AppCompatActivity {
 
     private String recognizedText;
-    private int caloriesIndex;
-    private int fatIndex;
-    private int carbohydrateIndex;
-    private int proteinIndex;
-    private int cholesterolIndex;
-    private int sodiumIndex;
-    private int sugarIndex;
+
+    private int caloriesIndex = 0;
+    private int fatIndex = 0;
+    private int carbohydrateIndex = 0;
+    private int proteinIndex = 0;
+    private int cholesterolIndex = 0;
+    private int sodiumIndex = 0;
+    private int sugarIndex = 0;
+
+    private boolean caloriesIndexUpdated = false;
+    private boolean fatIndexUpdated = false;
+    private boolean carbohydrateIndexUpdated = false;
+    private boolean proteinIndexUpdated = false;
+    private boolean cholesterolIndexUpdated = false;
+    private boolean sodiumIndexUpdated = false;
+    private boolean sugarIndexUpdated = false;
+
 
     private TextView calories;
     private TextView fat;
@@ -106,6 +116,7 @@ public class ProgramActivity extends AppCompatActivity {
                                 public void onSuccess(FirebaseVisionText texts) {
                                     TextView resultTextView = findViewById(R.id.calories);
                                     recognizedText = texts.getText();
+                                    updateTable();
                                 }
                             })
                     .addOnFailureListener(
@@ -117,8 +128,6 @@ public class ProgramActivity extends AppCompatActivity {
                                 }
                             });
         }
-
-        updateTable();
     }
 
     private Bitmap rotateBitmap(Bitmap source, float angle) {
@@ -129,32 +138,107 @@ public class ProgramActivity extends AppCompatActivity {
     }
 
     private void updateTable() {
-        recognizedText.toLowerCase();
+        recognizedText = recognizedText.toLowerCase();
         int length = recognizedText.length();
         String substring;
         for (int i = 1; i < length; i++) {
             substring = recognizedText.substring(0, i);
-            if (substring.contains("calories")) {
-                caloriesIndex = i;
+            if (substring.contains("/ calories")) {
+                if (!caloriesIndexUpdated) {
+                    caloriesIndex = i;
+                    caloriesIndexUpdated = true;
+                }
             }
-            if (substring.contains("fat")) {
-                fatIndex = i;
+            if (substring.contains("lipides")) {
+                if (!fatIndexUpdated) {
+                    fatIndex = i;
+                    fatIndexUpdated = true;
+                }
             }
-            if (substring.contains("carbohydrate")) {
-                carbohydrateIndex = i;
+            if (substring.contains("glucides")) {
+                if (!carbohydrateIndexUpdated) {
+                    carbohydrateIndex = i;
+                    carbohydrateIndexUpdated = true;
+                }
             }
-            if (substring.contains("protein")) {
-                proteinIndex = i;
+            if (substring.contains("protéines")) {
+                if (!proteinIndexUpdated) {
+                    proteinIndex = i;
+                    proteinIndexUpdated = true;
+                }
             }
-            if (substring.contains("cholesterol")) {
-                cholesterolIndex = i;
+            if (substring.contains("cholestérol")) {
+                if (!cholesterolIndexUpdated) {
+                    cholesterolIndex = i;
+                    cholesterolIndexUpdated = true;
+                }
             }
-            if (substring.contains("sodium")) {
-                sodiumIndex = i;
+            if (substring.contains("/ sodium")) {
+                if (!sodiumIndexUpdated) {
+                    sodiumIndex = i;
+                    sodiumIndexUpdated = true;
+                }
             }
-            if (substring.contains("sugar")) {
-                sugarIndex = i;
+            if (substring.contains("sucres")) {
+                if (!sugarIndexUpdated) {
+                    sugarIndex = i;
+                    sugarIndexUpdated = true;
+                }
             }
         }
+
+        System.out.println(recognizedText);
+
+        System.out.println("___________");
+        System.out.println(recognizedText.substring(caloriesIndex, caloriesIndex + 5));
+
+        if (caloriesIndex != 0) {
+            if (caloriesIndex + 5 <= length) {
+                String localSubstring = recognizedText.substring(caloriesIndex, caloriesIndex + 5);
+                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
+                    caloriesValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                }
+            } else {
+                String localSubstring = recognizedText.substring(caloriesIndex, length);
+                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
+                    caloriesValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                }
+            }
+        }
+//        if (fatIndex != 0) {
+//            if (fatIndex + 5 <= length) {
+//                fatValue.setText(Integer.parseInt(recognizedText.substring(fatIndex, fatIndex + 5).replaceAll("[^0-9]+", "")));
+//            } else {
+//                fatValue.setText(Integer.parseInt(recognizedText.substring(fatIndex, length).replaceAll("[^0-9]+", "")));
+//            }
+//        }
+//        if (carbohydrateIndex != 0) {
+//            if (carbohydrateIndex + 5 <= length) {
+//                carbohydrateValue.setText(Integer.parseInt(recognizedText.substring(carbohydrateIndex, carbohydrateIndex + 5).replaceAll("[^0-9]+", "")));
+//            } else {
+//                carbohydrateValue.setText(Integer.parseInt(recognizedText.substring(carbohydrateIndex, length).replaceAll("[^0-9]+", "")));
+//            }
+//        }
+//        if (proteinIndex + 5 <= length) {
+//            proteinValue.setText(Integer.parseInt(recognizedText.substring(proteinIndex, proteinIndex + 5).replaceAll("[^0-9]", "")));
+//        } else {
+//            proteinValue.setText(Integer.parseInt(recognizedText.substring(proteinIndex, length).replaceAll("[^0-9]", "")));
+//        }
+//        if (cholesterolIndex + 5 <= length) {
+//            cholesterolValue.setText(Integer.parseInt(recognizedText.substring(cholesterolIndex, cholesterolIndex + 5).replaceAll("[^0-9]", "")));
+//        } else {
+//            cholesterolValue.setText(Integer.parseInt(recognizedText.substring(cholesterolIndex, length).replaceAll("[^0-9]", "")));
+//        }
+//        if (sodiumIndex + 5 <= length) {
+//            sodiumValue.setText(Integer.parseInt(recognizedText.substring(sodiumIndex, sodiumIndex + 5).replaceAll("[^0-9]", "")));
+//        } else {
+//            sodiumValue.setText(Integer.parseInt(recognizedText.substring(sodiumIndex, length).replaceAll("[^0-9]", "")));
+//        }
+//        if (sugarIndex + 5 <= length) {
+//            sugarValue.setText(Integer.parseInt(recognizedText.substring(sugarIndex, sugarIndex + 5).replaceAll("[^0-9]", "")));
+//        } else {
+//            sugarValue.setText(Integer.parseInt(recognizedText.substring(sugarIndex, length).replaceAll("[^0-9]", "")));
+//        }
     }
 }
+
