@@ -26,13 +26,14 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="150dp"
+        android:layout_width="147dp"
         android:layout_height="50dp"
         android:layout_marginTop="250dp"
         android:background="@drawable/rounded_button_background"
         android:fontFamily="@font/poppins_semibold"
         android:onClick="takePhotoIntent"
-        android:text="Scan Image"
+        android:text="SCAN LABEL"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="17.5dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +41,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.506" />
+        app:layout_constraintVertical_bias="0.495" />
 
     <TextView
         android:id="@+id/textView2"
@@ -57,14 +58,15 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="152dp"
-        android:layout_height="184dp"
+        android:layout_width="217dp"
+        android:layout_height="183dp"
+        android:layout_marginEnd="1dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.393"
-        app:srcCompat="@drawable/spoon_and_fork" />
+        app:layout_constraintVertical_bias="0.406"
+        app:srcCompat="@drawable/home_logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
