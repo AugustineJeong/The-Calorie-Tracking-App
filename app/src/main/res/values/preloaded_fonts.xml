@@ -2,8 +2,14 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/audiowide</item>
+        <item>@font/bungee</item>
         <item>@font/bungee_hairline</item>
+        <item>@font/bungee_shade</item>
         <item>@font/maven_pro</item>
         <item>@font/orbitron</item>
+        <item>@font/poppins_light</item>
+        <item>@font/poppins_medium</item>
+        <item>@font/poppins_semibold</item>
+        <item>@font/raleway_thin</item>
     </array>
 </resources>
