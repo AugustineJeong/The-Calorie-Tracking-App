@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -73,6 +74,8 @@ public class ProgramActivity extends AppCompatActivity {
         sodiumValue = findViewById(R.id.sodiumText);
         sugarValue = findViewById(R.id.sugarText);
 
+        loadingStatus.setTextColor(Color.parseColor("#FF9D4B"));
+
         String path = getIntent().getStringExtra("imagePath");
 
         Bitmap bitmap = null;
@@ -80,6 +83,9 @@ public class ProgramActivity extends AppCompatActivity {
             bitmap = rotateBitmap(BitmapFactory.decodeFile(path), 90);
         } catch (Exception e) {
             System.out.println("no file found");
+            String manualEntry = "MANUAL ENTRY";
+            loadingStatus.setText(manualEntry);
+            loadingStatus.setTextColor(Color.parseColor("#429CF5"));
         }
 
         File file = new File(path, "tempFile.jpeg");
@@ -183,6 +189,7 @@ public class ProgramActivity extends AppCompatActivity {
 
         String loadedData = "LOADED DATA";
         loadingStatus.setText(loadedData);
+        loadingStatus.setTextColor(Color.parseColor("#17B243"));
     }
 
     private void updateCaloriesValue() {
