@@ -4,10 +4,9 @@
 https://youtu.be/EzsfUTFQwsE
 
 ## Screenshots 
-<p float="left">
-<img src="https://user-images.githubusercontent.com/14143525/82117922-825f6f80-9728-11ea-9382-1144232677d4.png" width="250"><p>New UI</p>
-<img src="https://user-images.githubusercontent.com/14143525/81294373-a7b2f600-9023-11ea-8aac-3fd8dfcf860d.png" width="250"><p>Old UI</p>
-</p>
+<p>New UI</p>
+<img src="https://user-images.githubusercontent.com/14143525/82117922-825f6f80-9728-11ea-9382-1144232677d4.png" width="250"><br/> 
+<p>Old UI</p>
 
 <div>
 <img src="https://user-images.githubusercontent.com/14143525/81294088-32472580-9023-11ea-9b82-bb126738404b.png" width="220">
