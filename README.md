@@ -5,6 +5,9 @@ https://youtu.be/EzsfUTFQwsE
 
 ## Screenshots 
 <div>
+  UI VERSION 2.0
+<img src="https://user-images.githubusercontent.com/14143525/82117922-825f6f80-9728-11ea-9382-1144232677d4.png" width="250">
+  UI VERSION 1.0
 <img src="https://user-images.githubusercontent.com/14143525/81294373-a7b2f600-9023-11ea-8aac-3fd8dfcf860d.png" width="250">
   
 <div>
