@@ -22,7 +22,7 @@ import java.util.Date;
 // https://developer.android.com/training/camera/photobasics#java
 
 
-public class MainActivity extends AppCompatActivity {
+public class StartActivity extends AppCompatActivity {
 
     String currentPhotoPath;
     static final int REQUEST_TAKE_PHOTO = 1;
