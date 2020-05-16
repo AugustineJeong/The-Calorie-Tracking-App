@@ -21,7 +21,7 @@ https://youtu.be/EzsfUTFQwsE
 4. On the 'Project Overview' page, add an Android app with package name "com.example.calories".
 5. Download the config file (google-services.json) and place the file inside /app.
 6. Connect an Android phone running Android 7.0 or higher. Enable USB debugging in phone setting's 'Developer options'.
-7. Using Android Studio, select the phone as the running device and run the program. (If the app fails to install, try to 'Clean Project' and/or 'Rebuild Project'. 
+7. Using Android Studio, select the phone as the running device and run the program. (If the app fails to install, try to 'Clean Project' and/or 'Rebuild Project'.) 
 
 ## APK Download Link
 TBA. Development in progress.
