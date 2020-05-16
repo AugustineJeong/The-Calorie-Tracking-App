@@ -14,7 +14,7 @@ https://youtu.be/EzsfUTFQwsE
 <img src="https://user-images.githubusercontent.com/14143525/81294105-383d0680-9023-11ea-8b9f-09899a8d31f4.png" width="220">
 
 ## Installation Instructions
-1. Go to <a href="https://firebase.google.com"> firebase.google.com </a>. <br/>
+1. Go to <a href="https://firebase.google.com/"> firebase.google.com</a>. <br/>
 2. Go to console. <br/>
 3. Create a new project with Google Analytics disabled. <br/>
 4. On the 'Project Overview' page, add an Android app with package name "com.example.calories".
