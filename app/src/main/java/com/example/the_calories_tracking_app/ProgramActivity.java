@@ -298,7 +298,8 @@ public class ProgramActivity extends AppCompatActivity {
     }
 
     private boolean bruteForceCheckKeyWord(String nutrient) {
-        return (recognizedTextSubstring.contains(nutrient + " 1") ||
+        return (recognizedTextSubstring.contains(nutrient + " 0") ||
+                recognizedTextSubstring.contains(nutrient + " 1") ||
                 recognizedTextSubstring.contains(nutrient + " 2") ||
                 recognizedTextSubstring.contains(nutrient + " 3") ||
                 recognizedTextSubstring.contains(nutrient + " 4") ||

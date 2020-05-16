@@ -191,7 +191,7 @@
         android:id="@+id/button2"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:background="@drawable/circle_button"
+        android:background="@drawable/rounded_button_background"
         android:fontFamily="casual"
         android:text="Record Data"
         android:textColor="#FFFFFF"
