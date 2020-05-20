@@ -1,18 +1,14 @@
 # the calories tracking app.
 
-## Demo Video
-https://youtu.be/EzsfUTFQwsE
-
 ## Screenshots 
-<p>New UI</p>
-<img src="https://user-images.githubusercontent.com/14143525/82117922-825f6f80-9728-11ea-9382-1144232677d4.png" width="250"><br/> 
-<p>Old UI</p>
-
 <div>
-<img src="https://user-images.githubusercontent.com/14143525/81294088-32472580-9023-11ea-9b82-bb126738404b.png" width="220">
-<img src="https://user-images.githubusercontent.com/14143525/81294094-3410e900-9023-11ea-968f-4da1932945fe.png" width="220">
-<img src="https://user-images.githubusercontent.com/14143525/81294102-36734300-9023-11ea-8360-dadc4877e71b.png" width="220">
-<img src="https://user-images.githubusercontent.com/14143525/81294105-383d0680-9023-11ea-8b9f-09899a8d31f4.png" width="220">
+<img src="https://user-images.githubusercontent.com/14143525/82431730-e4c7b100-9a43-11ea-920f-5d07571f315a.png" width="220">
+<img src="https://user-images.githubusercontent.com/14143525/82431739-e7c2a180-9a43-11ea-9c82-ee787539e7e8.png" width="220">
+<img src="https://user-images.githubusercontent.com/14143525/82431754-ec875580-9a43-11ea-8475-4ff16ec2f86e.png" width="220">
+<img src="https://user-images.githubusercontent.com/14143525/82431763-eee9af80-9a43-11ea-8684-d84e9afc2b49.png" width="220">
+  
+## Demo Video
+<a href="https://youtu.be/EzsfUTFQwsE"> Demo Video 1 (Old Version) </a>
 
 ## Installation Instructions
 1. Go to Google's <a href="https://firebase.google.com/"> Firebase </a>website.<br/>
