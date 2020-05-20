@@ -55,6 +55,9 @@ public class ProgramActivity extends AppCompatActivity {
     private EditText sodiumValue;
     private EditText sugarValue;
 
+    private TextView servings;
+    private EditText numberServings;
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
@@ -74,7 +77,8 @@ public class ProgramActivity extends AppCompatActivity {
         sodiumValue = findViewById(R.id.sodiumText);
         sugarValue = findViewById(R.id.sugarText);
 
-        loadingStatus.setTextColor(Color.parseColor("#FF9D4B"));
+        servings = findViewById(R.id.servings);
+        numberServings = findViewById(R.id.servingText);
 
         String path = getIntent().getStringExtra("imagePath");
 
@@ -85,7 +89,6 @@ public class ProgramActivity extends AppCompatActivity {
             System.out.println("no file found");
             String manualEntry = "MANUAL ENTRY";
             loadingStatus.setText(manualEntry);
-            loadingStatus.setTextColor(Color.parseColor("#429CF5"));
         }
 
         File file = new File(path, "tempFile.jpeg");
@@ -107,7 +110,7 @@ public class ProgramActivity extends AppCompatActivity {
                             new OnSuccessListener<FirebaseVisionText>() {
                                 @Override
                                 public void onSuccess(FirebaseVisionText texts) {
-                                    TextView resultTextView = findViewById(R.id.calories);
+//                                    TextView resultTextView = findViewById(R.id.calories);
                                     recognizedText = texts.getText();
                                     updateTable();
                                 }
@@ -116,7 +119,6 @@ public class ProgramActivity extends AppCompatActivity {
                             new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    // Task failed with an exception
                                     e.printStackTrace();
                                 }
                             });
@@ -131,6 +133,8 @@ public class ProgramActivity extends AppCompatActivity {
     }
 
     private void updateTable() {
+        setDefaultHint();
+
         recognizedText = recognizedText.toLowerCase();
         recognizedTextStringLength = recognizedText.length();
         for (int i = 1; i < recognizedTextStringLength; i++) {
@@ -189,7 +193,17 @@ public class ProgramActivity extends AppCompatActivity {
 
         String loadedData = "LOADED DATA";
         loadingStatus.setText(loadedData);
-        loadingStatus.setTextColor(Color.parseColor("#17B243"));
+    }
+
+    private void setDefaultHint() {
+        String defaultHint = "unrecognized";
+        caloriesValue.setHint(defaultHint);
+        fatValue.setHint(defaultHint);
+        carbohydrateValue.setHint(defaultHint);
+        proteinValue.setHint(defaultHint);
+        cholesterolValue.setHint(defaultHint);
+        sodiumValue.setHint(defaultHint);
+        sugarValue.setHint(defaultHint);
     }
 
     private void updateCaloriesValue() {
