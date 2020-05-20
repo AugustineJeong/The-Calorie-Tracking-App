@@ -16,26 +16,14 @@
         android:ems="10"
         android:fontFamily="@font/poppins_medium"
         android:gravity="center_horizontal"
-        android:hint="1"
+        android:hint="enter #"
         android:inputType="number"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
+        android:textCursorDrawable="@null"
         android:textSize="17dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/servings"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/servings"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="# SERVINGS "
-        android:textColor="#FFFFFF"
-        android:textSize="22dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sugar" />
 
     <EditText
         android:id="@+id/sugarText"
@@ -50,6 +38,7 @@
         android:inputType="number"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
+        android:textCursorDrawable="@null"
         android:textSize="17dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/sugar"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -67,6 +56,7 @@
         android:inputType="number"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
+        android:textCursorDrawable="@null"
         android:textSize="17dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/protein"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -84,6 +74,7 @@
         android:inputType="number"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
+        android:textCursorDrawable="@null"
         android:textSize="17dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/cholesterol"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -101,6 +92,7 @@
         android:inputType="number"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
+        android:textCursorDrawable="@null"
         android:textSize="17dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/sodium"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -118,6 +110,7 @@
         android:inputType="number"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
+        android:textCursorDrawable="@null"
         android:textSize="17dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/carbohydrate"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -135,6 +128,7 @@
         android:inputType="number"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
+        android:textCursorDrawable="@null"
         android:textSize="17dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/calories"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -152,9 +146,23 @@
         android:inputType="number"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
+        android:textCursorDrawable="@null"
         android:textSize="17dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/fat"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/servings"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="# SERVINGS "
+        android:textColor="#FFFFFF"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sugar" />
 
     <TextView
         android:id="@+id/sugar"

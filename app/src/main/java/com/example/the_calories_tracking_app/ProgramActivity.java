@@ -79,6 +79,7 @@ public class ProgramActivity extends AppCompatActivity {
 
         servings = findViewById(R.id.servings);
         numberServings = findViewById(R.id.servingText);
+        numberServings.setText("1");
 
         String path = getIntent().getStringExtra("imagePath");
 
@@ -133,8 +134,6 @@ public class ProgramActivity extends AppCompatActivity {
     }
 
     private void updateTable() {
-        setDefaultHint();
-
         recognizedText = recognizedText.toLowerCase();
         recognizedTextStringLength = recognizedText.length();
         for (int i = 1; i < recognizedTextStringLength; i++) {
@@ -195,30 +194,25 @@ public class ProgramActivity extends AppCompatActivity {
         loadingStatus.setText(loadedData);
     }
 
-    private void setDefaultHint() {
-        String defaultHint = "unrecognized";
-        caloriesValue.setHint(defaultHint);
-        fatValue.setHint(defaultHint);
-        carbohydrateValue.setHint(defaultHint);
-        proteinValue.setHint(defaultHint);
-        cholesterolValue.setHint(defaultHint);
-        sodiumValue.setHint(defaultHint);
-        sugarValue.setHint(defaultHint);
-    }
-
     private void updateCaloriesValue() {
         if (caloriesIndex != 0) {
             if (caloriesIndex + 5 <= recognizedTextStringLength) {
                 String localSubstring = recognizedText.substring(caloriesIndex, caloriesIndex + 5);
                 if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
                     caloriesValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                } else {
+                    caloriesValue.setHint("unrecognized");
                 }
             } else {
                 String localSubstring = recognizedText.substring(caloriesIndex, recognizedTextStringLength);
                 if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
                     caloriesValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                } else {
+                    caloriesValue.setHint("unrecognized");
                 }
             }
+        } else {
+            caloriesValue.setHint("unrecognized");
         }
     }
 
@@ -228,13 +222,19 @@ public class ProgramActivity extends AppCompatActivity {
                 String localSubstring = recognizedText.substring(fatIndex, fatIndex + 5);
                 if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
                     fatValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                } else {
+                    fatValue.setHint("unrecognized");
                 }
             } else {
                 String localSubstring = recognizedText.substring(fatIndex, recognizedTextStringLength);
                 if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
                     fatValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                } else {
+                    fatValue.setHint("unrecognized");
                 }
             }
+        } else {
+            fatValue.setHint("unrecognized");
         }
     }
 
@@ -244,13 +244,19 @@ public class ProgramActivity extends AppCompatActivity {
                 String localSubstring = recognizedText.substring(carbohydrateIndex, carbohydrateIndex + 5);
                 if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
                     carbohydrateValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                } else {
+                    carbohydrateValue.setHint("unrecognized");
                 }
             } else {
                 String localSubstring = recognizedText.substring(carbohydrateIndex, recognizedTextStringLength);
                 if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
                     carbohydrateValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                } else {
+                    carbohydrateValue.setHint("unrecognized");
                 }
             }
+        } else {
+            carbohydrateValue.setHint("unrecognized");
         }
     }
 
@@ -260,61 +266,85 @@ public class ProgramActivity extends AppCompatActivity {
                 String localSubstring = recognizedText.substring(proteinIndex, proteinIndex + 5);
                 if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
                     proteinValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                } else {
+                    proteinValue.setHint("unrecognized");
                 }
             } else {
                 String localSubstring = recognizedText.substring(proteinIndex, recognizedTextStringLength);
                 if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
                     proteinValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                } else {
+                    proteinValue.setHint("unrecognized");
                 }
             }
+        } else {
+            proteinValue.setHint("unrecognized");
         }
     }
 
     private void updateCholesterolValue() {
-        if (caloriesIndex != 0) {
-            if (caloriesIndex + 5 <= recognizedTextStringLength) {
+        if (cholesterolIndex != 0) {
+            if (cholesterolIndex + 5 <= recognizedTextStringLength) {
                 String localSubstring = recognizedText.substring(cholesterolIndex, cholesterolIndex + 5);
                 if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
                     cholesterolValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                } else {
+                    cholesterolValue.setHint("unrecognized");
                 }
             } else {
                 String localSubstring = recognizedText.substring(cholesterolIndex, recognizedTextStringLength);
                 if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
                     cholesterolValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                } else {
+                    cholesterolValue.setHint("unrecognized");
                 }
             }
+        } else {
+            cholesterolValue.setHint("unrecognized");
         }
     }
 
     private void updateSodiumValue() {
         if (sodiumIndex != 0) {
-            if (caloriesIndex + 5 <= recognizedTextStringLength) {
+            if (sodiumIndex + 5 <= recognizedTextStringLength) {
                 String localSubstring = recognizedText.substring(sodiumIndex, sodiumIndex + 5);
                 if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
                     sodiumValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                } else {
+                    sodiumValue.setHint("unrecognized");
                 }
             } else {
                 String localSubstring = recognizedText.substring(sodiumIndex, recognizedTextStringLength);
                 if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
                     sodiumValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                } else {
+                    sodiumValue.setHint("unrecognized");
                 }
             }
+        } else {
+            sodiumValue.setHint("unrecognized");
         }
     }
 
     private void updateSugarValue() {
-        if (caloriesIndex != 0) {
-            if (caloriesIndex + 5 <= recognizedTextStringLength) {
+        if (sugarIndex != 0) {
+            if (sugarIndex + 5 <= recognizedTextStringLength) {
                 String localSubstring = recognizedText.substring(sugarIndex, sugarIndex + 5);
                 if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
                     sugarValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                } else {
+                    sugarValue.setHint("unrecognized");
                 }
             } else {
                 String localSubstring = recognizedText.substring(sugarIndex, recognizedTextStringLength);
                 if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
                     sugarValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                } else {
+                    sugarValue.setHint("unrecognized");
                 }
             }
+        } else {
+            sugarValue.setHint("unrecognized");
         }
     }
 
