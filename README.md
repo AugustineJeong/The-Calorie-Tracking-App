@@ -5,10 +5,10 @@
 
 ## Screenshots 
 <div>
-<img src="https://user-images.githubusercontent.com/14143525/82431730-e4c7b100-9a43-11ea-920f-5d07571f315a.png" width="220">
-<img src="https://user-images.githubusercontent.com/14143525/82431739-e7c2a180-9a43-11ea-9c82-ee787539e7e8.png" width="220">
-<img src="https://user-images.githubusercontent.com/14143525/82431754-ec875580-9a43-11ea-8475-4ff16ec2f86e.png" width="220">
-<img src="https://user-images.githubusercontent.com/14143525/82431763-eee9af80-9a43-11ea-8684-d84e9afc2b49.png" width="220">
+<img src="https://user-images.githubusercontent.com/14143525/82997514-514e2d00-9fbb-11ea-8c90-dc57e72863f8.png" width="220.35">
+<img src="https://user-images.githubusercontent.com/14143525/82997519-5317f080-9fbb-11ea-8a7a-668dd1f3894a.png" width="211.5">
+<img src="https://user-images.githubusercontent.com/14143525/82997523-54491d80-9fbb-11ea-8051-8537e0ef6491.png" width="220">
+<img src="https://user-images.githubusercontent.com/14143525/82997527-54e1b400-9fbb-11ea-893a-c6044c795c3c.png" width="220.3">
 
 ## Installation Instructions
 1. Go to Google's <a href="https://firebase.google.com/"> Firebase </a>website.<br/>
