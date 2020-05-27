@@ -6,7 +6,7 @@
 ## Screenshots 
 <div>
 <img src="https://user-images.githubusercontent.com/14143525/82997514-514e2d00-9fbb-11ea-8c90-dc57e72863f8.png" width="220.35">
-<img src="https://user-images.githubusercontent.com/14143525/82997519-5317f080-9fbb-11ea-8a7a-668dd1f3894a.png" width="211.5">
+<img src="https://user-images.githubusercontent.com/14143525/82997519-5317f080-9fbb-11ea-8a7a-668dd1f3894a.png" width="211.7">
 <img src="https://user-images.githubusercontent.com/14143525/82997523-54491d80-9fbb-11ea-8051-8537e0ef6491.png" width="220">
 <img src="https://user-images.githubusercontent.com/14143525/82997527-54e1b400-9fbb-11ea-893a-c6044c795c3c.png" width="220.3">
 
