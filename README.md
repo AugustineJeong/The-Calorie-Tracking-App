@@ -1,7 +1,7 @@
 # the calories tracking app.
 
 ## Demo Video
-<a href="https://youtu.be/B8dr2ezkFtc"> Demo Video 2 (New Version) </a>
+<a href="https://youtu.be/B8dr2ezkFtc"> Demo Video</a>
 
 ## Screenshots 
 <div>
