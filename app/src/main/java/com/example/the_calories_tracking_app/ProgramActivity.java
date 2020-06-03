@@ -198,15 +198,15 @@ public class ProgramActivity extends AppCompatActivity {
         if (caloriesIndex != 0) {
             if (caloriesIndex + 5 <= recognizedTextStringLength) {
                 String localSubstring = recognizedText.substring(caloriesIndex, caloriesIndex + 5);
-                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
-                    caloriesValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                if (localSubstring.matches("[^0-9]*[0-9]+([^0-9]*|[.][0-9]+[^0-9]*)")) {
+                    caloriesValue.setText(localSubstring.replaceAll("[^.0-9]", ""));
                 } else {
                     caloriesValue.setHint("unrecognized");
                 }
             } else {
                 String localSubstring = recognizedText.substring(caloriesIndex, recognizedTextStringLength);
-                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
-                    caloriesValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                if (localSubstring.matches("[^0-9]*[0-9]+([^0-9]*|[.][0-9]+[^0-9]*)")) {
+                    caloriesValue.setText(localSubstring.replaceAll("[^.0-9]", ""));
                 } else {
                     caloriesValue.setHint("unrecognized");
                 }
@@ -220,15 +220,15 @@ public class ProgramActivity extends AppCompatActivity {
         if (fatIndex != 0) {
             if (fatIndex + 5 <= recognizedTextStringLength) {
                 String localSubstring = recognizedText.substring(fatIndex, fatIndex + 5);
-                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
-                    fatValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                if (localSubstring.matches("[^0-9]*[0-9]+([^0-9]*|[.][0-9]+[^0-9]*)")) {
+                    fatValue.setText(localSubstring.replaceAll("[^.0-9]", ""));
                 } else {
                     fatValue.setHint("unrecognized");
                 }
             } else {
                 String localSubstring = recognizedText.substring(fatIndex, recognizedTextStringLength);
-                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
-                    fatValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                if (localSubstring.matches("[^0-9]*[0-9]+([^0-9]*|[.][0-9]+[^0-9]*)")) {
+                    fatValue.setText(localSubstring.replaceAll("[^.0-9]", ""));
                 } else {
                     fatValue.setHint("unrecognized");
                 }
@@ -242,15 +242,15 @@ public class ProgramActivity extends AppCompatActivity {
         if (carbohydrateIndex != 0) {
             if (carbohydrateIndex + 5 <= recognizedTextStringLength) {
                 String localSubstring = recognizedText.substring(carbohydrateIndex, carbohydrateIndex + 5);
-                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
-                    carbohydrateValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                if (localSubstring.matches("[^0-9]*[0-9]+([^0-9]*|[.][0-9]+[^0-9]*)")) {
+                    carbohydrateValue.setText(localSubstring.replaceAll("[^.0-9]", ""));
                 } else {
                     carbohydrateValue.setHint("unrecognized");
                 }
             } else {
                 String localSubstring = recognizedText.substring(carbohydrateIndex, recognizedTextStringLength);
-                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
-                    carbohydrateValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                if (localSubstring.matches("[^0-9]*[0-9]+([^0-9]*|[.][0-9]+[^0-9]*)")) {
+                    carbohydrateValue.setText(localSubstring.replaceAll("[^.0-9]", ""));
                 } else {
                     carbohydrateValue.setHint("unrecognized");
                 }
@@ -264,15 +264,15 @@ public class ProgramActivity extends AppCompatActivity {
         if (proteinIndex != 0) {
             if (proteinIndex + 5 <= recognizedTextStringLength) {
                 String localSubstring = recognizedText.substring(proteinIndex, proteinIndex + 5);
-                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
-                    proteinValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                if (localSubstring.matches("[^0-9]*[0-9]+([^0-9]*|[.][0-9]+[^0-9]*)")) {
+                    proteinValue.setText(localSubstring.replaceAll("[^.0-9]", ""));
                 } else {
                     proteinValue.setHint("unrecognized");
                 }
             } else {
                 String localSubstring = recognizedText.substring(proteinIndex, recognizedTextStringLength);
-                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
-                    proteinValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                if (localSubstring.matches("[^0-9]*[0-9]+([^0-9]*|[.][0-9]+[^0-9]*)")) {
+                    proteinValue.setText(localSubstring.replaceAll("[^.0-9]", ""));
                 } else {
                     proteinValue.setHint("unrecognized");
                 }
@@ -286,15 +286,15 @@ public class ProgramActivity extends AppCompatActivity {
         if (cholesterolIndex != 0) {
             if (cholesterolIndex + 5 <= recognizedTextStringLength) {
                 String localSubstring = recognizedText.substring(cholesterolIndex, cholesterolIndex + 5);
-                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
-                    cholesterolValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                if (localSubstring.matches("[^0-9]*[0-9]+([^0-9]*|[.][0-9]+[^0-9]*)")) {
+                    cholesterolValue.setText(localSubstring.replaceAll("[^.0-9]", ""));
                 } else {
                     cholesterolValue.setHint("unrecognized");
                 }
             } else {
                 String localSubstring = recognizedText.substring(cholesterolIndex, recognizedTextStringLength);
-                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
-                    cholesterolValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                if (localSubstring.matches("[^0-9]*[0-9]+([^0-9]*|[.][0-9]+[^0-9]*)")) {
+                    cholesterolValue.setText(localSubstring.replaceAll("[^.0-9]", ""));
                 } else {
                     cholesterolValue.setHint("unrecognized");
                 }
@@ -308,15 +308,15 @@ public class ProgramActivity extends AppCompatActivity {
         if (sodiumIndex != 0) {
             if (sodiumIndex + 5 <= recognizedTextStringLength) {
                 String localSubstring = recognizedText.substring(sodiumIndex, sodiumIndex + 5);
-                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
-                    sodiumValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                if (localSubstring.matches("[^0-9]*[0-9]+([^0-9]*|[.][0-9]+[^0-9]*)")) {
+                    sodiumValue.setText(localSubstring.replaceAll("[^.0-9]", ""));
                 } else {
                     sodiumValue.setHint("unrecognized");
                 }
             } else {
                 String localSubstring = recognizedText.substring(sodiumIndex, recognizedTextStringLength);
-                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
-                    sodiumValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                if (localSubstring.matches("[^0-9]*[0-9]+([^0-9]*|[.][0-9]+[^0-9]*)")) {
+                    sodiumValue.setText(localSubstring.replaceAll("[^.0-9]", ""));
                 } else {
                     sodiumValue.setHint("unrecognized");
                 }
@@ -330,15 +330,15 @@ public class ProgramActivity extends AppCompatActivity {
         if (sugarIndex != 0) {
             if (sugarIndex + 5 <= recognizedTextStringLength) {
                 String localSubstring = recognizedText.substring(sugarIndex, sugarIndex + 5);
-                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
-                    sugarValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                if (localSubstring.matches("[^0-9]*[0-9]+([^0-9]*|[.][0-9]+[^0-9]*)")) {
+                    sugarValue.setText(localSubstring.replaceAll("[^.0-9]", ""));
                 } else {
                     sugarValue.setHint("unrecognized");
                 }
             } else {
                 String localSubstring = recognizedText.substring(sugarIndex, recognizedTextStringLength);
-                if (localSubstring.matches("[^0-9]*[0-9]+[^0-9]*")) {
-                    sugarValue.setText(localSubstring.replaceAll("[^0-9]", ""));
+                if (localSubstring.matches("[^0-9]*[0-9]+([^0-9]*|[.][0-9]+[^0-9]*)")) {
+                    sugarValue.setText(localSubstring.replaceAll("[^.0-9]", ""));
                 } else {
                     sugarValue.setHint("unrecognized");
                 }
