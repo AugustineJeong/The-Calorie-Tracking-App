@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -55,8 +56,9 @@ public class ProgramActivity extends AppCompatActivity {
     private EditText sodiumValue;
     private EditText sugarValue;
 
-    private TextView servings;
     private EditText numberServings;
+
+    private Data data;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -77,9 +79,10 @@ public class ProgramActivity extends AppCompatActivity {
         sodiumValue = findViewById(R.id.sodiumText);
         sugarValue = findViewById(R.id.sugarText);
 
-        servings = findViewById(R.id.servings);
         numberServings = findViewById(R.id.servingText);
         numberServings.setText("1");
+
+        data = new Data();
 
         String path = getIntent().getStringExtra("imagePath");
 
@@ -131,6 +134,25 @@ public class ProgramActivity extends AppCompatActivity {
         matrix.postRotate(angle);
         return Bitmap.createBitmap(source, 0, 0, source.getWidth(),
                 source.getHeight(), matrix, true);
+    }
+
+    public void recordData(View view) {
+        try {
+            float calories = Float.parseFloat(caloriesValue.getText().toString());
+            float fat = Float.parseFloat(fatValue.getText().toString());
+            float carbohydrate = Float.parseFloat(carbohydrateValue.getText().toString());
+            float protein = Float.parseFloat(proteinValue.getText().toString());
+            float cholesterol = Float.parseFloat(cholesterolValue.getText().toString());
+            float sodium = Float.parseFloat(sodiumValue.getText().toString());
+            float sugar = Float.parseFloat(sugarValue.getText().toString());
+            float servings = Float.parseFloat(numberServings.getText().toString());
+            data.addItem(new Item(calories, fat, carbohydrate, protein, cholesterol, sodium,
+                    sugar, servings));
+            Intent startScreen = new Intent(this, StartActivity.class);
+            startActivity(startScreen);
+        } catch (Exception e) {
+            System.out.println("Error!");
+        }
     }
 
     private void updateTable() {

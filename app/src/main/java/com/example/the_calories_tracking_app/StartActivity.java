@@ -69,7 +69,6 @@ public class StartActivity extends AppCompatActivity {
         imageScreen.putExtra("imagePath", currentPhotoPath);
         startActivity(imageScreen);
     }
-    //temp
 }
 
 

@@ -7,7 +7,6 @@ import java.util.Map;
 
 public class Data {
     static private List<Item> itemList = new ArrayList<>();
-    static private Map<String, Integer> dateIndexMap = new HashMap<>();
 
     public void addItem(Item item) {
         itemList.add(item);
