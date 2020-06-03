@@ -1,4 +1,4 @@
-# the calories tracking app.
+# the calorie tracking app.
 
 ## Demo Video
 <a href="https://youtu.be/B8dr2ezkFtc"> Demo Video</a>
